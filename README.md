@@ -1,1 +1,0 @@
-# ali.yilmaz.github.io
