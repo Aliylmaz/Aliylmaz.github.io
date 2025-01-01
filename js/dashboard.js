@@ -10,9 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
    
    
-    if (username) {
-        document.getElementById("username").textContent = username;
+   if (username) {
+        // Kullanıcı adı varsa ekrana yazdır
+        usernameElement.textContent = username;
     } else {
+        // Kullanıcı adı yoksa giriş ekranına yönlendir
         alert("Kullanıcı adı bulunamadı, giriş ekranına yönlendiriliyorsunuz.");
         window.location.href = "login.html";
     }
