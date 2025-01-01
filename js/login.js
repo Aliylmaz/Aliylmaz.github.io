@@ -19,7 +19,8 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
         alert(`Giriş başarılı! Hoş geldiniz, ${user.username}.`);
 
         // Dashboard'a yönlendirme
-        window.location.href = "dashboard.html";
+        window.location.href = "/html/dashboard.html";
+
     } else {
         alert("E-posta veya şifre hatalı. Lütfen tekrar deneyin.");
     }
