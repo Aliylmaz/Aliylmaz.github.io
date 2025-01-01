@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     categoryButton.addEventListener("click", () => {
-        window.location.href = "/html/index.html";
+        window.location.href = "../html/index.html";
     });
 
     leaderboardButton.addEventListener("click", () => {
-        window.location.href = "/html/leaderboard.html";
+        window.location.href = "../html/leaderboard.html";
     });
 });
