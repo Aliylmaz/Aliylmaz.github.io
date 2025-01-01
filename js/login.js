@@ -14,6 +14,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     if (user) {
         // Kullanıcı bilgilerini kaydet
         localStorage.setItem("currentUser", JSON.stringify(user));
+        console.log(localStorage.getItem("currentUser")); // Veriyi kontrol et
 
         // Başarılı giriş mesajı
         alert(`Giriş başarılı! Hoş geldiniz, ${user.username}.`);
