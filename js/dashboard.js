@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    if (username) {
-        usernameElement.textContent = username;
+    if (currentUser) {
+        document.getElementById("username").textContent = currentUser.username;
     } else {
         alert("Kullanıcı adı bulunamadı, giriş ekranına yönlendiriliyorsunuz.");
         window.location.href = "login.html";
