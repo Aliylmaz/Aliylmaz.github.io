@@ -1,1 +1,0 @@
-https://aliylmaz.github.io/
