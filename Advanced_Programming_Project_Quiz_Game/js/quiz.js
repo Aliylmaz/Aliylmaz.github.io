@@ -20,6 +20,9 @@ function createQuizStructure() {
                 <p id="correct-stats">✔️ 0</p>
                 <p id="wrong-stats">❌ 0</p>
             </div>
+            <div class="progress-container">
+                <p id="progress-text">Soru: 1 / 50</p> <!-- Soru İlerleme Göstergesi -->
+            </div>
             <div class="stats-right">
                 <p id="timer">⏱️ 00:00</p>
             </div>
@@ -34,9 +37,8 @@ function createQuizStructure() {
     `;
 }
 
-
-
-function fetchWithTimeout(url, options = {}, timeout = 5000) { // 10 saniyelik varsayılan timeout
+// Fetch with Timeout
+function fetchWithTimeout(url, options = {}, timeout = 5000) {
     return new Promise((resolve, reject) => {
         const timer = setTimeout(() => {
             reject(new Error("İstek zaman aşımına uğradı. Lütfen tekrar deneyin."));
@@ -54,6 +56,7 @@ function fetchWithTimeout(url, options = {}, timeout = 5000) { // 10 saniyelik v
     });
 }
 
+// Save Score
 function saveScore(finalScore) {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     if (!currentUser) {
@@ -78,7 +81,6 @@ function saveScore(finalScore) {
 
     alert(`Sonuç kaydedildi! Yeni toplam skorunuz: ${users[userIndex].score}`);
 }
-
 
 // Fetch Questions
 async function fetchQuestions(categoryId) {
@@ -115,9 +117,13 @@ function loadQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
     const questionText = document.getElementById("question-text");
     const optionsSection = document.querySelector(".options-section");
+    const progressText = document.getElementById("progress-text");
 
     questionText.innerHTML = currentQuestion.question; // Soruyu ekle
     optionsSection.innerHTML = ""; // Önceki seçenekleri temizle
+
+    // Soru ilerleme göstergesini güncelle
+    progressText.textContent = `Soru: ${currentQuestionIndex + 1} / ${questions.length}`;
 
     // Şıkları oluştur
     currentQuestion.options.forEach((option) => {
@@ -165,10 +171,10 @@ function updateStats() {
     document.getElementById("score-display").textContent = `Puan: ${score}`;
 }
 
+// Show Results
 function showResults() {
-    clearInterval(timerInterval);
+    clearInterval(timerInterval); // Zamanlayıcıyı durdur
 
-    // Kullanıcıya sonuçları göster
     const questionSection = document.querySelector(".question-section");
     const optionsSection = document.querySelector(".options-section");
     const footer = document.querySelector(".footer");
@@ -184,18 +190,12 @@ function showResults() {
         <button id="return-to-dashboard">Ana Sayfaya Dön</button>
     `;
 
-    // Skoru kaydet
     saveScore(score);
 
-    // Ana sayfaya dönme işlemi
     document.getElementById("return-to-dashboard").addEventListener("click", () => {
         window.location.href = "dashboard.html"; // Dashboard sayfasına yönlendir
     });
 }
-
-
-
-
 
 // Start Timer
 function startTimer() {
