@@ -3,6 +3,8 @@ const categoryButton = document.getElementById("go-to-categories");
 const leaderboardButton = document.getElementById("go-to-leaderboard");
 const usernameElement = document.getElementById("username");
 
+const logoutButton = document.getElementById("logout-button");
+
 // Kullanıcı bilgisi kontrolü (LocalStorage)
 document.addEventListener("DOMContentLoaded", () => {
     const currentUser = JSON.parse(localStorage.getItem("currentUser")); // currentUser'ı JSON olarak al
@@ -23,4 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
     leaderboardButton.addEventListener("click", () => {
         window.location.href = "leaderboard.html"; // Liderlik tablosuna yönlendirme
     });
+
+    // Çıkış yapma işlemi
+    document.getElementById("logout-button").addEventListener("click", () => {
+        // localStorage temizle
+        localStorage.removeItem("currentUser");
+
+        // Login sayfasına yönlendirme
+        window.location.href = "login.html";
+    });
+
+
 });
