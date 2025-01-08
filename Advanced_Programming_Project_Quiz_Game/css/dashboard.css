@@ -13,9 +13,9 @@ body {
     width: 90%;
     max-width: 600px;
     background: #2b2e4a;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     text-align: center;
 }
 
@@ -24,8 +24,9 @@ body {
 }
 
 .dashboard-header h1 {
-    font-size: 24px;
+    font-size: 28px;
     margin: 10px 0;
+    color: #ffffff;
 }
 
 .dashboard-header p {
@@ -34,29 +35,34 @@ body {
 }
 
 .dashboard-menu {
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 .menu-buttons {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    gap: 15px;
 }
 
 .menu-buttons button {
     flex: 1;
-    padding: 10px;
+    padding: 12px 20px;
     font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     background: #4caf50;
     color: white;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .menu-buttons button:hover {
     background: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 #go-to-leaderboard {
@@ -65,14 +71,53 @@ body {
 
 #go-to-leaderboard:hover {
     background: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .game-info {
     margin-top: 20px;
+    background: #3a3e63;
+    padding: 15px;
+    border-radius: 10px;
+    color: #ddd;
+}
+
+.game-info h2 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 10px;
 }
 
 .game-info p {
     margin: 10px 0;
     font-size: 14px;
-    color: #ddd;
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+.logout-button {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logout-button:hover {
+    background-color: #e60000;
+    transform: scale(1.05);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.logout-button:active {
+    transform: scale(0.95);
 }
