@@ -1,6 +1,4 @@
-İşte geliştirdiğiniz Quiz Oyunu projesi için profesyonelce hazırlanmış, tüm detayları kapsayan bir `README.md` içeriği:
 
----
 
 ```markdown
 # 🎯 Bilgi Yarışması Uygulaması (Quiz App)
@@ -151,8 +149,5 @@ GitHub Pages ile yayına almak isterseniz:
 MIT Lisansı. Dilediğiniz gibi kullanabilir ve geliştirebilirsiniz.
 
 ---
-```
 
----
 
-Bu `README.md` dosyasını projenizin kök klasörüne kaydedip GitHub’a yüklersen, projen profesyonel bir şekilde belgelenmiş olur. Görseller kısmına ekran görüntüleri eklemen yeterli. Yardım istersen onları da birlikte oluşturabiliriz. Hazır mısın?
