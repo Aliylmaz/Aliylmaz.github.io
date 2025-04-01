@@ -2,6 +2,10 @@
 
 Bu proje, Fatih Sultan Mehmet Vakıf Üniversitesi Bilgisayar Mühendisliği 3. sınıf öğrencisi Ali Yılmaz tarafından geliştirilmiştir. Kullanıcıların farklı kategorilerde bilgi seviyelerini test edebileceği, puan toplayarak liderlik tablosunda sıralamaya girebileceği interaktif bir quiz oyunudur. Proje HTML, CSS ve JavaScript teknolojileriyle geliştirilmiş; veri yönetimi ise localStorage kullanılarak sağlanmıştır.
 
+Oyunu oynamak için bu linke tıklayıp localde oynayabilirsiniz:
+Aliylmaz.github.io/Advanced_Programming_Project_Quiz_Game
+/index.html
+
 ---
 
 ## Özellikler
