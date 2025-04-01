@@ -1,64 +1,65 @@
+# Quiz Platform Projesi
 
-
-```markdown
-# 🎯 Bilgi Yarışması Uygulaması (Quiz App)
-
-Bu proje, HTML, CSS ve JavaScript kullanılarak geliştirilmiş tamamen tarayıcı tabanlı bir **bilgi yarışması (quiz) platformudur**. Kullanıcılar farklı kategorilerde soruları cevaplayarak puan toplayabilir, liderlik tablosunda sıralamaya girebilir ve başarılarını takip edebilir.
+Bu proje, Fatih Sultan Mehmet Vakıf Üniversitesi Bilgisayar Mühendisliği 3. sınıf öğrencisi Ali Yılmaz tarafından geliştirilmiştir. Kullanıcıların farklı kategorilerde bilgi seviyelerini test edebileceği, puan toplayarak liderlik tablosunda sıralamaya girebileceği interaktif bir quiz oyunudur. Proje HTML, CSS ve JavaScript teknolojileriyle geliştirilmiş; veri yönetimi ise localStorage kullanılarak sağlanmıştır.
 
 ---
 
-## 🚀 Proje Hakkında
+## Özellikler
 
-Proje, temel olarak aşağıdaki modüllerden oluşmaktadır:
-
-- **Kullanıcı Kayıt ve Giriş Sistemi**
-- **Kategori Bazlı Quiz Oyun Yapısı**
-- **Zamanlayıcı (Timer) Fonksiyonu**
-- **Puanlama ve Skor Takibi**
-- **Liderlik Tablosu (Leaderboard)**
-- **LocalStorage Tabanlı Veri Saklama (API ve veritabanı kullanmadan)**
-
----
-
-## 🧩 Kullanılan Teknolojiler
-
-| Alan             | Teknoloji                 |
-|------------------|---------------------------|
-| Frontend         | HTML, CSS, JavaScript     |
-| Stil             | Responsive CSS             |
-| Veri Yönetimi    | `localStorage`            |
-| API              | [OpenTDB](https://opentdb.com/) (Soru verisi) |
+- Kullanıcı kayıt ve giriş sistemi
+- Kategori seçimi ve soruların rastgele gelmesi
+- Zamanlayıcı ile quiz takibi
+- Doğru ve yanlış cevap takibi
+- Puanlama sistemi (Doğru: +20, Yanlış: -5)
+- Liderlik tablosu
+- Kullanıcı oturum takibi ve çıkış butonu
+- Skor kaydetme ve güncelleme
 
 ---
 
-## 📦 Özellikler
+## Kullanılan Teknolojiler
 
-### 🧍‍♂️ Kullanıcı Sistemi
-
-- `signup.html`: Yeni kullanıcı kaydı (email, username, password doğrulamalı)
-- `login.html`: Giriş ekranı (doğrulama sonrası kullanıcıyı tanımlar)
-- `dashboard.html`: Giriş yapan kullanıcının adıyla karşılama
-
-### ❓ Quiz Modülü
-
-- 50 adet rastgele API'den çekilen soru
-- Doğru cevap = +20 puan, Yanlış cevap = -5 puan
-- Toplam skor güncellemesi ve kaydı
-- Timer ile geçen süre takibi
-- Aktif soru sayısı takibi (örneğin: 15/50)
-
-### 🏆 Liderlik Tablosu
-
-- En yüksek skorlara göre sıralama
-- LocalStorage tabanlı kayıt ve güncelleme
-- Aynı kullanıcı için skorların birikimli şekilde güncellenmesi
+- **Frontend:** HTML5, CSS3, JavaScript (Vanilla)
+- **Veri Depolama:** LocalStorage (tarayıcı bazlı veri tutma)
+- **API:** [Open Trivia DB](https://opentdb.com) üzerinden rastgele soru çekme
 
 ---
 
-## 📁 Proje Yapısı
+## Ekranlar & Sayfalar
 
-```
-📁 project-root/
+### 1. Anasayfa (index.html)
+- Proje tanıtımı
+- "Quiz'e Başla" butonuyla login ekranına yönlendirme
+
+### 2. Kayıt Sayfası (signup.html)
+- Yeni kullanıcı kaydı
+- E-posta regex kontrolü (@gmail.com veya @hotmail.com)
+- Güvenli şifre kontrolü (regex ile)
+
+### 3. Giriş Sayfası (login.html)
+- Kullanıcı girişi
+- Bilgiler localStorage ile doğrulanır
+
+### 4. Dashboard (dashboard.html)
+- Kullanıcıya hoş geldiniz mesajı
+- Kategori seçimi ve liderlik tablosuna erişim butonları
+- Çıkış (Logout) butonu
+
+### 5. Quiz Sayfası (quiz.html)
+- Soruların listelendiği ekran
+- Zamanlayıcı, doğru/yanlış cevap istatistikleri
+- Şık seçimi ve skor hesaplama
+
+### 6. Liderlik Tablosu (leaderboard.html)
+- LocalStorage'dan skorları alır ve sıralar
+- En yüksek skora göre listeleme yapar
+
+---
+
+## Proje Dizin Yapısı
+
+```bash
+📁 Advanced_Programming_Project_Quiz_Game/
 ├── index.html
 ├── login.html
 ├── signup.html
@@ -78,76 +79,166 @@ Proje, temel olarak aşağıdaki modüllerden oluşmaktadır:
 │   ├── quiz.js
 │   └── leaderboard.js
 │
-├── icons/ (kategori ikonları)
-└── README.md
+├── icons/                 # Kategori ikonları klasörü
+│
+└── README.md            # Proje dokümantasyonu
 ```
 
 ---
 
-## 🛠 Kurulum ve Kullanım
+## Kurulum ve Kullanım
 
-### 1. Klonlayın
+1. Bu repoyu GitHub'dan klonlayın:
+   ```bash
+   git clone https://github.com/Aliylmaz/Aliylmaz.github.io.git
+   ```
 
-```bash
-git clone https://github.com/kullaniciadi/quiz-app.git
-cd quiz-app
-```
+2. Tarayıcıda `index.html` dosyasını açarak başlayabilirsiniz.
 
-### 2. Tarayıcıda Açın
-
-`index.html` dosyasını doğrudan bir tarayıcıda açarak uygulamayı başlatabilirsiniz.
-
-> **Not**: GitHub Pages üzerinden yayınlamak için projenizi GitHub'a yükleyin ve `index.html` ana sayfa olarak ayarlayın.
+> Not: Proje sadece frontend teknolojileriyle geliştirildiği için ek sunucu kurulumuna gerek yoktur.
 
 ---
 
-## 🔐 Güvenlik ve Sınırlandırmalar
-
-- Tüm kullanıcı verileri sadece tarayıcı belleğinde (`localStorage`) tutulur.
-- Şifre doğrulaması, düzenli ifadelerle yapılır.
-- Aynı e-posta adresiyle birden fazla hesap oluşturulamaz.
-- Uygulama dış dünyaya veri göndermez.
-
----
-
-## 🖼 Görseller
-
-### Dashboard Ekranı
-
-![dashboard](./screenshots/dashboard.png)
-
-### Quiz Ekranı
-
-![quiz](./screenshots/quiz.png)
-
-### Liderlik Tablosu
-
-![leaderboard](./screenshots/leaderboard.png)
-
----
-
-## 👨‍💻 Geliştirici
+## Geliştirici
 
 **Ali Yılmaz**  
-Bilgisayar Mühendisliği 3. Sınıf  
-Fatih Sultan Mehmet Vakıf Üniversitesi  
+Bilgisayar Mühendisliği 3. Sınıf Öğrencisi  
+Fatih Sultan Mehmet Vakıf Üniversitesi
+
+LinkedIn: [Ali Yılmaz](https://www.linkedin.com/in/ali-yilmaz)  
+GitHub: [github.com/Aliylmaz](https://github.com/Aliylmaz)
 
 ---
 
-## 🌐 Yayın
+## Lisans
 
-GitHub Pages ile yayına almak isterseniz:
-
-- Reponuzu açın → `Settings > Pages` sekmesine gidin.
-- `main` branch'ten `root` klasörü seçin.
-- URL’niz: `https://kullaniciadi.github.io/quiz-app/`
+Bu proje sadece eğitim amacıyla geliştirilmiştir. Herhangi bir ticari kullanımda geliştiricinin izni gereklidir.
 
 ---
 
-## 📃 Lisans
+## Teşekkür
+- [OpenTriviaDB](https://opentdb.com) API hizmeti için
+- HTML/CSS & JS topluluklarından edindiğim bilgiler için
 
-MIT Lisansı. Dilediğiniz gibi kullanabilir ve geliştirebilirsiniz.
+# Quiz Platform Projesi
+
+Bu proje, Fatih Sultan Mehmet Vakıf Üniversitesi Bilgisayar Mühendisliği 3. sınıf öğrencisi Ali Yılmaz tarafından geliştirilmiştir. Kullanıcıların farklı kategorilerde bilgi seviyelerini test edebileceği, puan toplayarak liderlik tablosunda sıralamaya girebileceği interaktif bir quiz oyunudur. Proje HTML, CSS ve JavaScript teknolojileriyle geliştirilmiş; veri yönetimi ise localStorage kullanılarak sağlanmıştır.
 
 ---
 
+## Özellikler
+
+- Kullanıcı kayıt ve giriş sistemi
+- Kategori seçimi ve soruların rastgele gelmesi
+- Zamanlayıcı ile quiz takibi
+- Doğru ve yanlış cevap takibi
+- Puanlama sistemi (Doğru: +20, Yanlış: -5)
+- Liderlik tablosu
+- Kullanıcı oturum takibi ve çıkış butonu
+- Skor kaydetme ve güncelleme
+
+---
+
+## Kullanılan Teknolojiler
+
+- **Frontend:** HTML5, CSS3, JavaScript (Vanilla)
+- **Veri Depolama:** LocalStorage (tarayıcı bazlı veri tutma)
+- **API:** [Open Trivia DB](https://opentdb.com) üzerinden rastgele soru çekme
+
+---
+
+## Ekranlar & Sayfalar
+
+### 1. Anasayfa (index.html)
+- Proje tanıtımı
+- "Quiz'e Başla" butonuyla login ekranına yönlendirme
+
+### 2. Kayıt Sayfası (signup.html)
+- Yeni kullanıcı kaydı
+- E-posta regex kontrolü (@gmail.com veya @hotmail.com)
+- Güvenli şifre kontrolü (regex ile)
+
+### 3. Giriş Sayfası (login.html)
+- Kullanıcı girişi
+- Bilgiler localStorage ile doğrulanır
+
+### 4. Dashboard (dashboard.html)
+- Kullanıcıya hoş geldiniz mesajı
+- Kategori seçimi ve liderlik tablosuna erişim butonları
+- Çıkış (Logout) butonu
+
+### 5. Quiz Sayfası (quiz.html)
+- Soruların listelendiği ekran
+- Zamanlayıcı, doğru/yanlış cevap istatistikleri
+- Şık seçimi ve skor hesaplama
+
+### 6. Liderlik Tablosu (leaderboard.html)
+- LocalStorage'dan skorları alır ve sıralar
+- En yüksek skora göre listeleme yapar
+
+---
+
+## Proje Dizin Yapısı
+
+```bash
+📁 Advanced_Programming_Project_Quiz_Game/
+├── index.html
+├── login.html
+├── signup.html
+├── dashboard.html
+├── quiz.html
+├── leaderboard.html
+│
+├── css/
+│   ├── style.css
+│   ├── dashboard.css
+│   └── quiz.css
+│
+├── js/
+│   ├── login.js
+│   ├── signup.js
+│   ├── dashboard.js
+│   ├── quiz.js
+│   └── leaderboard.js
+│
+├── icons/                 # Kategori ikonları klasörü
+│
+└── README.md            # Proje dokümantasyonu
+```
+
+---
+
+## Kurulum ve Kullanım
+
+1. Bu repoyu GitHub'dan klonlayın:
+   ```bash
+   git clone https://github.com/Aliylmaz/Aliylmaz.github.io.git
+   ```
+
+2. Tarayıcıda `index.html` dosyasını açarak başlayabilirsiniz.
+
+> Not: Proje sadece frontend teknolojileriyle geliştirildiği için ek sunucu kurulumuna gerek yoktur.
+
+---
+
+## Geliştirici
+
+**Ali Yılmaz**  
+Bilgisayar Mühendisliği 3. Sınıf Öğrencisi  
+Fatih Sultan Mehmet Vakıf Üniversitesi
+
+LinkedIn: [Ali Yılmaz](https://www.linkedin.com/in/ali-yilmaz)  
+GitHub: [github.com/Aliylmaz](https://github.com/Aliylmaz)
+
+---
+
+## Lisans
+
+Bu proje sadece eğitim amacıyla geliştirilmiştir. Herhangi bir ticari kullanımda geliştiricinin izni gereklidir.
+
+---
+
+## Teşekkür
+- [OpenTriviaDB](https://opentdb.com) API hizmeti için
+- HTML/CSS & JS topluluklarından edindiğim bilgiler için
 
